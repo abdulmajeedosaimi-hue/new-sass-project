@@ -1,0 +1,168 @@
+@use "sass:map";
+$spacing: (
+  "small": 8px,
+  "medium": 16px,
+  "large": 24px,
+  "extra-large": 40px,
+);
+$font-size: (
+  "small": 14px,
+  "medium": 18px,
+  "large": 24px,
+  "extra-large": 32px,
+);
+$colors: (
+  "background": #f5f3fa,
+  "surface": #ffffff,
+  "primary": #26324a,
+  "text": #292735,
+  "accent": #a99be8,
+  "highlight": #f08080,
+  "muted": #777587,
+);
+$button-colors: (
+  "discount": red,
+  "premium": gold,
+  "free": blue,
+);
+@mixin center($position, $align) {
+  display: flex;
+  flex-direction: $position;
+  justify-content: center;
+  align-items: $align;
+}
+* {
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+html {
+  min-height: 100%;
+}
+main {
+  flex-grow: 1;
+}
+body {
+  display: flex;
+  flex-direction: column;
+
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: map-get($colors, "background");
+  color: map-get($colors, "text");
+  min-height: 100vh;
+}
+.header {
+  @include center(column, center);
+  background-color: map-get($colors, "primary");
+  padding-bottom: 40px;
+
+  &__title {
+    font-size: map-get($font-size, "extra-large");
+    color: map-get($colors, "surface");
+    padding: map-get($spacing, "extra-large") map-get($spacing, "large");
+  }
+  &__description {
+    font-size: map-get($font-size, "large");
+    color: map-get($colors, "accent");
+  }
+}
+
+.book {
+  gap: 50px;
+
+  @include center(row, center);
+  background-color: map-get($colors, "background");
+  %card {
+    background-color: map.get($colors, "surface");
+    color: map.get($colors, "text");
+    padding: map.get($spacing, "large");
+    border-radius: 16px;
+    @include center(column, stretch);
+    width: 370px;
+    height: 560px;
+    height: 100%;
+    justify-content: space-between;
+    gap: 50px;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  &__card {
+    @extend %card;
+  }
+  &__wrapper {
+    flex-grow: 1;
+  }
+  &__category {
+    background-color: map.get($colors, "background");
+    color: map.get($colors, "text");
+    padding: map.get($spacing, "small") map.get($spacing, "small");
+    font-size: map-get($font-size, "small");
+    border-radius: 10px;
+  }
+  &__title {
+    font-size: map-get($font-size, "extra-large");
+    color: map-get($colors, "primary");
+    padding: map-get($spacing, "large") map-get($spacing, "large");
+  }
+  &__writer {
+    font-size: map.get($font-size, "small");
+    color: map-get($colors, "accent");
+    padding: map-get($spacing, "large") map-get($spacing, "large");
+  }
+
+  &__description {
+    font-size: map-get($font-size, "small");
+    color: map.get($colors, "muted");
+  }
+
+  &__cost {
+    color: map.get($colors, "highlight");
+    font-size: map.get($font-size, "large");
+    padding-bottom: 20px;
+  }
+  &__button {
+    padding: map-get($spacing, "small") map-get($spacing, "small");
+    border-radius: 5px;
+    width: 100%;
+    background-color: map.get($colors, "primary");
+    color: map.get($colors, "surface");
+    font-size: map.get($font-size, "small");
+    border: unset;
+    @each $button, $button-color in $button-colors {
+      &--#{$button} {
+        background-color: $button-color;
+      }
+    }
+  }
+}
+
+.footer {
+  @include center(column, center);
+  background-color: map-get($colors, "primary");
+
+  &__text {
+    font-size: map-get($font-size, "extra-large");
+    color: map-get($colors, "surface");
+    padding: map-get($spacing, "large") map-get($spacing, "large");
+  }
+  &__description {
+    font-size: map-get($font-size, "medium");
+    color: map-get($colors, "accent");
+  }
+  &__copyright {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: map-get($font-size, "small");
+    color: map-get($colors, "muted");
+  }
+}

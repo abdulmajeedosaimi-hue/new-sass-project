@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  min-height: 100%;
+}
+
+main {
+  flex-grow: 1;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f3fa;
+  color: #292735;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #26324a;
+  padding-bottom: 40px;
+}
+.header__title {
+  font-size: 32px;
+  color: #ffffff;
+  padding: 40px 24px;
+}
+.header__description {
+  font-size: 24px;
+  color: #a99be8;
+}
+
+.book {
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f3fa;
+}
+.book .book__card {
+  background-color: #ffffff;
+  color: #292735;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 370px;
+  height: 560px;
+  height: 100%;
+  justify-content: space-between;
+  gap: 50px;
+}
+.book .book__card:hover {
+  transform: translateY(-5px);
+}
+.book__wrapper {
+  flex-grow: 1;
+}
+.book__category {
+  background-color: #f5f3fa;
+  color: #292735;
+  padding: 8px 8px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.book__title {
+  font-size: 32px;
+  color: #26324a;
+  padding: 24px 24px;
+}
+.book__writer {
+  font-size: 14px;
+  color: #a99be8;
+  padding: 24px 24px;
+}
+.book__description {
+  font-size: 14px;
+  color: #777587;
+}
+.book__cost {
+  color: #f08080;
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+.book__button {
+  padding: 8px 8px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #26324a;
+  color: #ffffff;
+  font-size: 14px;
+  border: unset;
+}
+.book__button--discount {
+  background-color: red;
+}
+.book__button--premium {
+  background-color: gold;
+}
+.book__button--free {
+  background-color: blue;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #26324a;
+}
+.footer__text {
+  font-size: 32px;
+  color: #ffffff;
+  padding: 24px 24px;
+}
+.footer__description {
+  font-size: 18px;
+  color: #a99be8;
+}
+.footer__copyright {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #777587;
+}/*# sourceMappingURL=styles.css.map */
